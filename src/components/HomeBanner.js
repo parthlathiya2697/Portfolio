@@ -7,19 +7,19 @@ export default function HomeBanner({id}) {
     <div className="home" id={id}> 
         <div className='content'>
             <div className="wrapper">
-              <div className="name">Deepa Jha</div>
+              <div className="name">Parth Lathiya</div>
               <div className="staticTitle">
-                Designer
+                AI Engineer
                 <div className='hrLine'></div>
               </div>
               <ul className="dynamicTitle">
-                <li>+<span>Developer</span></li>
+                <li>+<span>Backend Developer</span></li>
               </ul>
-              <a className='btn' href="https://www.linkedin.com/in/deepajha14/" target="_blank" rel="noopener noreferrer">Hire Me</a>
+              <a className='btn' href="https://www.linkedin.com/in/ParthLathiya14/" target="_blank" rel="noopener noreferrer">Hire Me</a>
             </div>
         </div>
         <div className="mask">
-            <img className='bg' src={cartoon} alt="girl-with-laptop" />
+            <img className='bg' src={cartoon} alt="boy-with-laptop" />
         </div>
     </div>
   )

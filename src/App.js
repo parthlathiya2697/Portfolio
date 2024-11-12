@@ -34,28 +34,28 @@ function App() {
       <ProjectCard
         id = "project"
         className = "odd"
-        projectTitle="Wiggles: Pet Care Made Easy"
-        projectDesc="A one-stop solution for pet data management, automated vaccinations, QR-based lost pet recovery, and organizing pet playdates."
-        projectLink="https://github.com/DevanshSahni/Wiggles"
-        deployedProjectLink="https://wiggles.vercel.app"
-        projectImg={require('./images/projectWiggles.jpg')}
+        projectTitle="AI Doctor: Self Care Made Easy"
+        projectDesc="A one-stop solution for your health management, relevant FirstAid, Hospitals, and appropriate Doctors."
+        projectLink="https://github.com/parthlathiya2697/Healthcare-AI-Chatbot"
+        deployedProjectLink=""
+        projectImg={require('./images/projectAiDoctor.png')}
       />
 
       <ProjectCard
-        projectTitle="Animated Card: featuring the latest glassmorphism trend"
-        projectDesc="React JS provided me the flexibility needed to create an interactive card with a glass-like effect, which adds a sense of depth and dimension to the user interface"
-        projectLink="https://github.com/Deepajha14/Touch-me-not-Card"
-        deployedProjectLink="https://deepajha14.github.io/Touch-me-not-Card/"
-        projectImg={require('./images/projectGlassmorphism.png')}
+        projectTitle="AI Fashion: Analyse your Clothing Sense"
+        projectDesc="A place where you can analyse your clothing sense and Improve upon it."
+        projectLink="https://github.com/parthlathiya2697/Fashion-Sense-Rating"
+        deployedProjectLink=""
+        projectImg={require('./images/projectAiFashion.png')}
       />
 
       <ProjectCard
         className = "odd"
-        projectTitle="Rog-free: accessible anytime, anywhere"
-        projectDesc="An approach to target and heal specific health conditions by transforming the living room into a yoga studio"
-        projectLink="https://github.com/Deepajha14/Rog-Free"
-        deployedProjectLink="https://deepajha14.github.io/Rog-Free/"
-        projectImg={require('./images/projectRogfree.png')}
+        projectTitle="AI Branding: Create your Brand's Presence"
+        projectDesc="Single Click solution to creating a whole lot of assets for branding "
+        projectLink="https://github.com/parthlathiya2697/AI-Branding-Solution"
+        deployedProjectLink=""
+        projectImg={require('./images/projectAiBranding.png')}
       />
       <AboutMe id = 'about' />
       <SkillCard id = 'skills' />
