@@ -11,7 +11,7 @@ export default function ContactForm({ id }) {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('ParthLathiya14', 'template_lyzbf0p', form.current, '-8AsG2hlNcWfgWJFj')
+    emailjs.sendForm('service_qv8kdxz', 'template_btx0fqm', form.current, 'ZLdLD_XqBd8xLQ2lH')
       .then((result) => {
           console.log(result.text);
           toast.success('Message sent successfully.', {
