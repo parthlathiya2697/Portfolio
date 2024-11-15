@@ -50,6 +50,7 @@ npm install
 
 npm run build
 
-pm2 start npm --name "your-app-name" -- start
+PORT=80 pm2 start npm --name "your-app-name" -- start
+
 
 ```
