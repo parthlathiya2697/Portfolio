@@ -52,5 +52,11 @@ npm run build
 
 PORT=80 pm2 start npm --name "your-app-name" -- start
 
+pm2 startup
+
+pm2 save
+
+pm2 logs
+
 
 ```
