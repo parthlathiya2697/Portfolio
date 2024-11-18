@@ -21,46 +21,15 @@ jobs:
       - name: Deploy Frontend to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          cd Fashion-Sense-Rating
+          cd Portfolio
+          git checkout origin production
           git pull origin production
-          cd frontend
           npm install
           npm run build  # Add this line to build the Next.js app
           # Check if the app is running and stop it if it is
-          if pm2 list | grep -q "fashion-sense-rating-app"; then
-            pm2 stop fashion-sense-rating-app
+          if pm2 list | grep -q "app-portfolio"; then
+            pm2 stop app-portfolio
           fi
-          pm2 start npm --name "fashion-sense-rating-app" -- run start -- -H 0.0.0.0 -p 3000
+          pm2 start npm --name "app-portfolio" -- run start -- -H 0.0.0.0 -p 3000
           pm2 save
-          EOF
-
-
-  deploy_backend:
-    runs-on: ubuntu-latest
-    needs: deploy_frontend
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
-
-      - name: Deploy Backend to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          cd Fashion-Sense-Rating
-          git pull origin production
-          cd backend
-          source venv/bin/activate
-          pip install -r requirements.txt
-          python manage.py migrate
-          # Check if the server is running and stop it
-          if pgrep -f "manage.py runserver"; then
-            pkill -f "manage.py runserver"
-          fi
-          # Start the server in the background and log output
-          nohup python manage.py runserver 0.0.0.0:8000 > backend.log 2>&1 &
           EOF
