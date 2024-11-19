@@ -37,7 +37,7 @@ function App() {
         projectTitle="AI Doctor: Self Care Made Easy"
         projectDesc="A one-stop solution for your health management, relevant FirstAid, Hospitals, and appropriate Doctors."
         projectLink="https://github.com/parthlathiya2697/Healthcare-AI-Chatbot"
-        deployedProjectLink=""
+        deployedProjectLink="https://aihealthcare.parthlathiya.wiki/"
         projectImg={require('./images/projectAiDoctor.png')}
       />
 
