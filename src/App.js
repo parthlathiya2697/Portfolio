@@ -45,7 +45,7 @@ function App() {
         projectTitle="AI Fashion: Analyse your Clothing Sense"
         projectDesc="A place where you can analyse your clothing sense and Improve upon it."
         projectLink="https://github.com/parthlathiya2697/Fashion-Sense-Rating"
-        deployedProjectLink=""
+        deployedProjectLink="https://aifashion.parthlathiya.wiki/"
         projectImg={require('./images/projectAiFashion.png')}
       />
 
@@ -54,7 +54,7 @@ function App() {
         projectTitle="AI Branding: Create your Brand's Presence"
         projectDesc="Single Click solution to creating a whole lot of assets for branding "
         projectLink="https://github.com/parthlathiya2697/AI-Branding-Solution"
-        deployedProjectLink=""
+        deployedProjectLink="https://aifashion.parthlathiya.wiki/"
         projectImg={require('./images/projectAiBranding.png')}
       />
       <AboutMe id = 'about' />
