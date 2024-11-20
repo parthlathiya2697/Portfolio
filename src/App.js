@@ -54,7 +54,7 @@ function App() {
         projectTitle="AI Branding: Create your Brand's Presence"
         projectDesc="Single Click solution to creating a whole lot of assets for branding "
         projectLink="https://github.com/parthlathiya2697/AI-Branding-Solution"
-        deployedProjectLink="https://aifashion.parthlathiya.wiki/"
+        deployedProjectLink="https://aibranding.parthlathiya.wiki/"
         projectImg={require('./images/projectAiBranding.png')}
       />
       <AboutMe id = 'about' />

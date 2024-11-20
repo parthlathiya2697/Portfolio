@@ -106,3 +106,25 @@ This guide outlines the steps to configure the networking setup required to host
 4. **Save Changes**.
 
 ---
+
+
+## Resize the Partition (if needed)
+
+Extend the Partition: Use growpart to extend the partition to use the full disk:
+
+```bash
+sudo growpart /dev/xvda 1
+```
+
+Replace /dev/xvda with the actual disk identifier from the lsblk output, if different.
+Resize the Filesystem:
+
+For ext4 filesystem:
+```bash
+sudo resize2fs /dev/xvda1
+```
+
+For XFS filesystem:
+```bash
+sudo xfs_growfs /
+```
