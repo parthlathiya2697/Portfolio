@@ -4,9 +4,13 @@ import myProfile from "../images/profile-image2.jpg";
 
 export default function AboutMe({ id }) {
   return (
+    <>
+    <br/> <br/> <br/> <br/> <br/> <br/>
     <div className="about-container" id={id}>
       <div className="aboutMe-text">
-        <h3>Hey there, 👋</h3>
+        <br />
+        <h3>About Me</h3>
+        <h4>Hey there, 👋</h4>
         I'm <span>Parth Lathiya</span>, a Software Engineer with over six years of experience building innovative solutions in <span>automation, AI, and web development</span>. From crafting user-friendly web experiences to creating intelligent automation systems, I’m passionate about using technology to solve real-world problems.
 
         <br /> <br />
@@ -16,10 +20,10 @@ export default function AboutMe({ id }) {
       </div>
 
       <div className="profile-photo">
-        <div className="heading"> About Me</div>
         <img className="img" src={myProfile} alt="Profile" style={{width: '400px', height: 'auto'}}></img>
       </div>
       <div className="name">Parth</div>
     </div>
+    </>
   );
 }

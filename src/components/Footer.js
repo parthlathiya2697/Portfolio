@@ -8,8 +8,11 @@ export default function Footer() {
     marginLeft: 7
   }
   return (
+    <>
+    <br/> <br/> <br/> <br/> <br/> <br/>
     <div className='footer'>
         Made with ❤ by Parth Lathiya <span style={styleSymbol}>©</span> 2024
     </div>
+    </>
   )
 }
