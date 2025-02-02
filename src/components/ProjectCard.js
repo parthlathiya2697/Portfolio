@@ -20,8 +20,24 @@ export default function ProjectCard(props) {
           <div className="project-title">{props.projectTitle}</div>
           <div className="desc">{props.projectDesc}</div>
           <div className='button-group' style={{ display: 'flex', gap: '1rem' }}>
-            <button className='btn' onClick={handleOnClick}>
-              <span>View on<FiGithub className="social" size={20} style={{ marginLeft: "8px", position: "relative", top: "2px", strokeWidth: "3" }} /></span>
+            <button 
+              className='btn' 
+              onClick={props.projectLink ? handleOnClick : null} 
+              disabled={!props.projectLink}
+              style={{
+                backgroundColor: props.projectLink ? 'initial' : 'gray',
+                cursor: props.projectLink ? 'pointer' : 'not-allowed'
+              }}
+            >
+              <span>
+                {props.projectLink ? (
+                  <>
+                    View on<FiGithub className="social" size={20} style={{ marginLeft: "8px", position: "relative", top: "2px", strokeWidth: "3" }} />
+                  </>
+                ) : (
+                  "Code Private"
+                )}
+              </span>
               <FaArrowRight className='btn-arrow' size={22} style={{ marginLeft: "1rem" }} />
             </button>
             {props.deployedProjectLink && (
