@@ -71,7 +71,7 @@ function App() {
           projectTitle="AI PPT Generator"
           projectDesc="The most efficient way to generate PPTs."
           projectLink=""
-          deployedProjectLink="https://aipptgenerator.parthlathiya.wiki/"
+          deployedProjectLink="https://waipptgenerator.parthlathiya.wiki/"
           projectImg={require('./images/projectPptGenerator.png')}
         />
 
