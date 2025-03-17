@@ -30,6 +30,8 @@ jobs:
           if pm2 list | grep -q "app-portfolio"; then
             pm2 stop app-portfolio
           fi
-          pm2 start npm --name "app-portfolio" -- run start -- -H 0.0.0.0 -p 3000
+          # Set PORT environment variable before starting
+          export PORT=8000
+          PORT=8000 pm2 start npm --name "app-farmx" -- start
           pm2 save
           EOF

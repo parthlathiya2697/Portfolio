@@ -1,5 +1,8 @@
 # Parth's Portfolio Website
 
+-- Official Documentation Readme : https://www.notion.so/https-parthlathiya-wiki-1b8149a63999805f8834c54a69564586
+
+
 Welcome to my personal portfolio website! This is a showcase of my skills, and projects in the field of Software Development. <br/>
 Link- [parthlathiya.wiki](http://65.2.124.171/)
 <br/> <br/>
@@ -51,7 +54,7 @@ npm install
 npm run build
 
 PORT=80 pm2 start npm --name "your-app-name" -- start
-
+pm2 delete appname
 pm2 startup
 
 pm2 save
