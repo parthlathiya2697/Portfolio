@@ -79,7 +79,7 @@ function App() {
           projectTitle="Invest in the Next Big Thing"
           projectDesc="Your gateway to IPO investments. Research, analyze, and apply for IPOs all in one place."
           projectLink=""
-          deployedProjectLink="https://ipo-platform.parthlathiya.wiki/"
+          deployedProjectLink="https://aiipoplatform.parthlathiya.wiki/"
           projectImg={require('./images/projectIpoPlatform.png')}
         />
 
