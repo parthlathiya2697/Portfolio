@@ -61,8 +61,8 @@ function App() {
         <ProjectCard
           projectTitle="Revolutionizing Indoor Farming"
           projectDesc="Experience the future of agriculture with our innovative hydroponic and aeroponic solutions."
-          projectLink="https://github.com/parthlathiya2697/Modern-Farm-X.git"
-          deployedProjectLink="https://modern-farming.parthlathiya.wiki/"
+          projectLink="https://github.com/parthlathiya2697/FarmX.git"
+          deployedProjectLink="https://farmx.parthlathiya.wiki/"
           projectImg={require('./images/projectModernFarm.png')}
         />
 
