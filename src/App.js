@@ -83,7 +83,13 @@ function App() {
           projectImg={require('./images/projectIpoPlatform.png')}
         />
 
-
+        <ProjectCard
+          projectTitle="Chat with your documents in seconds"
+          projectDesc="PDF GPT allows you to have conversations with any PDF document. Simply upload your file and start asking questions right away."
+          projectLink=""
+          deployedProjectLink="https://ipo-platform.parthlathiya.wiki/"
+          projectImg={require('./images/projectIpoPlatform.png')}
+        />
 
         <AboutMe id='about' />
         <SkillCard id='skills' />

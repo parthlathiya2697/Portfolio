@@ -23,96 +23,77 @@ sudo apt update
 sudo apt install nginx -y
 Check if Nginx is running:
 
-bash
-Copy code
 sudo systemctl status nginx
 If not, start and enable it:
 
-bash
-Copy code
 sudo systemctl start nginx
 sudo systemctl enable nginx
 2. Build Your React Application
 If not already built, navigate to your React project directory on the EC2 instance:
 
-bash
-Copy code
 cd /Portfolio
 npm install
 npm run build
 This creates a build folder containing the static files.
 
-3. Move Build Files to Nginx's Directory
-Copy the build folder to a directory accessible by Nginx (e.g., /var/www/Portfolio):
-
-bash
-Copy code
-sudo mkdir -p /var/www/Portfolio
-sudo cp -r /Portfolio/build/* /var/www/Portfolio/
-Set permissions for the directory:
-
-bash
-Copy code
-sudo chown -R www-data:www-data /var/www/Portfolio
-sudo chmod -R 755 /var/www/Portfolio
-4. Configure Nginx
-Create a new Nginx configuration file for the React app:
-
-bash
-Copy code
 sudo nano /etc/nginx/sites-available/Portfolio
+
 Add the following content:
 
-nginx
-Copy code
 server {
-    listen 80;
-
-    server_name your-domain-name.com; # Replace with your domain or EC2 public IP
-
-    root /var/www/Portfolio;
-    index index.html;
+    server_name parthlathiya.wiki www.parthlathiya.wiki;
 
     location / {
-        try_files $uri /index.html;
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
     }
 
-    error_page 404 /index.html;
-
-    location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|woff2?|eot|ttf|otf)$ {
-        expires 6M;
-        access_log off;
-        add_header Cache-Control "public";
-    }
+    error_page 502 /502.html;
 
     location ~ /\.ht {
         deny all;
     }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/parthlathiya.wiki-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/parthlathiya.wiki-0001/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
 }
+server {
+    if ($host = aifashion.parthlathiya.wiki) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name aifashion.parthlathiya.wiki;
+    return 404; # managed by Certbot
+
+}
+
 Save and exit the file.
 
 Enable the configuration:
 
-bash
-Copy code
 sudo ln -s /etc/nginx/sites-available/Portfolio /etc/nginx/sites-enabled/
 Disable the default configuration:
 
-bash
-Copy code
 sudo rm /etc/nginx/sites-enabled/default
 Test the Nginx configuration:
 
-bash
-Copy code
 sudo nginx -t
 If no errors are reported, reload Nginx:
 
-bash
-Copy code
 sudo systemctl reload nginx
 5. Allow HTTP Traffic
-Make sure your EC2 instance's security group allows traffic on port 80:
+Make sure your EC2 instance's security group allows traffic on port 80 for nginx:
 
 Go to the AWS Management Console.
 Navigate to EC2 > Security Groups.
@@ -125,17 +106,11 @@ To secure your application with SSL, follow these steps:
 
 Install Certbot:
 
-bash
-Copy code
 sudo apt install certbot python3-certbot-nginx -y
 Obtain and configure an SSL certificate:
 
-bash
-Copy code
-sudo certbot --nginx -d your-domain-name.com
+sudo certbot --nginx -d parthlathiya.wiki
 Test automatic renewal:
 
-bash
-Copy code
 sudo certbot renew --dry-run
 Nginx will automatically redirect HTTP to HTTPS after the configuration.
