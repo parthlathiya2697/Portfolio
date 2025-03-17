@@ -32,6 +32,6 @@ jobs:
           fi
           # Set PORT environment variable before starting
           export PORT=8000
-          PORT=8000 pm2 start npm --name "app-farmx" -- start
+          pm2 start "npm run dev -- --host 0.0.0.0 --port 8000" --name "app-portfolio"
           pm2 save
           EOF
