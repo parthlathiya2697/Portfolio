@@ -84,10 +84,11 @@ function App() {
         />
 
         <ProjectCard
+          className="odd"
           projectTitle="Chat with your documents in seconds"
           projectDesc="PDF GPT allows you to have conversations with any PDF document. Simply upload your file and start asking questions right away."
           projectLink=""
-          deployedProjectLink="https://ipo-platform.parthlathiya.wiki/"
+          deployedProjectLink="https://aichatdoc.parthlathiya.wiki/"
           projectImg={require('./images/projectIpoPlatform.png')}
         />
 
