@@ -31,6 +31,7 @@ jobs:
             pm2 stop app-portfolio
           fi
           # Set PORT environment variable before starting
-          PORT=8000 pm2 start npm --name "app-portfolio" -- start
+          export PORT=8000
+          pm2 start npm --name "app-portfolio" -- start
           pm2 save
           EOF
