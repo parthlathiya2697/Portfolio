@@ -15,3 +15,6 @@
       pm2 start "npm run dev -- --host 0.0.0.0 --port 8000" --name "app-portfolio"
       pm2 save
       EOF
+
+
+<!-- Security scan triggered at 2026-08-31 18:23:07 -->
